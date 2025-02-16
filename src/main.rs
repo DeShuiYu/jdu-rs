@@ -7,12 +7,12 @@ use tabled::settings::{Alignment, Style};
 use tabled::settings::object::Columns;
 
 const Byte: u64 = 1 << (0 * 10);
-const KiByte: u64 = 1 << (1 * 10);
-const MiByte: u64 = 1 << (2 * 10);
-const GiByte: u64 = 1 << (3 * 10);
-const TiByte: u64 = 1 << (4 * 10);
-const PiByte: u64 = 1 << (5 * 10);
-const EiByte: u64 = 1 << (6 * 10);
+const Ki_Byte: u64 = 1 << (1 * 10);
+const Mi_Byte: u64 = 1 << (2 * 10);
+const Gi_Byte: u64 = 1 << (3 * 10);
+const Ti_Byte: u64 = 1 << (4 * 10);
+const Pi_Byte: u64 = 1 << (5 * 10);
+const Ei_Byte: u64 = 1 << (6 * 10);
 
 type WalkDir = jwalk::WalkDirGeneric<((), Option<Result<std::fs::Metadata, jwalk::Error>>)>;
 #[derive(Tabled)]
@@ -29,12 +29,12 @@ struct ShowInfo {
 
 fn format_filesize_type(size: u64) -> String {
     match size {
-        size if size > EiByte => format!("EiB"),
-        size if size > PiByte => format!("PiB"),
-        size if size > TiByte => format!("TiB"),
-        size if size > GiByte => format!("GiB"),
-        size if size > MiByte => format!("MiB"),
-        size if size > KiByte => format!("KiB"),
+        size if size > Ei_Byte => format!("EiB"),
+        size if size > Pi_Byte => format!("PiB"),
+        size if size > Ti_Byte => format!("TiB"),
+        size if size > Gi_Byte => format!("GiB"),
+        size if size > Mi_Byte => format!("MiB"),
+        size if size > Ki_Byte => format!("KiB"),
         _ => format!("B"),
     }
 }
