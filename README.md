@@ -1,4 +1,4 @@
-<p style="text-align:center"><code>jdu</code>:超高性能统计所有文件总大小工具</p>
+<center><code>jdu</code>:超高性能统计所有文件总大小工具</center>
 
 ***
 
